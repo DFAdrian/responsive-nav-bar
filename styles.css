@@ -1,0 +1,133 @@
+:root{
+    --nav-items-color: rgb(76, 169, 216);
+    --nav-items-hover: rgb(31, 136, 189);
+    --third-color-linear:rgb(213, 218, 233);
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:rgb(184, 222, 241);
+}
+
+.nav{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 5px #0004;
+    padding:10px 1.5em ;
+}
+
+
+.nav__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav__img{
+    width: 45px;
+    height: 45px;
+}
+
+.nav__toggle{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-bars{
+    font-size: 1rem;
+    color: var(--nav-items-color);
+}
+
+.links-ul__li,
+.social-ul__li{
+    list-style: none;
+}
+
+.links-ul__link,
+.social-ul__link{
+    text-decoration: none;
+    color: var(--nav-items-color);
+}
+
+.links-ul__li{
+    padding: .5rem;
+    margin-top: 5px;
+}
+
+.links-ul{
+    display: none;
+    padding-left: 0;
+}
+
+.social-ul{
+    display: none;
+    justify-content: space-evenly;
+}
+
+.appear{
+    display: block;
+}
+
+
+@media (hover:hover){
+    .links-ul__link:hover,
+    .social-ul__link:hover{
+        color:var(--nav-items-hover);
+    }
+    .links-ul__li:hover {
+        background-image: linear-gradient(to left,var(--nav-items-hover), var(--nav-items-color), var(--third-color-linear) );
+    }
+    
+    .nav__toggle:hover{
+        transform: rotate(90deg);
+    }
+}
+
+
+@media screen and (min-width:900px) {
+    .nav,
+    .social-ul,
+    .links-ul{
+        display: flex;
+    }
+
+    .links-ul__li{
+        padding: 0 10px;
+    }
+
+    .nav{
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__toggle{
+        display: none;
+    }
+
+    .nav__div,
+    .nav__title{
+        width: 20%;
+    }
+
+    .social-ul{
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    @media (hover:hover){
+        .links-ul__li:hover {
+            background-image: none;
+        }
+    }
+}
